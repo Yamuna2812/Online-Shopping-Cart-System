@@ -1,0 +1,19 @@
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+class Cart:
+    def __init__(self):
+        self.items = []
+
+    def add_product(self, product):
+        self.items.append(product)
+
+    def total(self):
+        return sum(item.price for item in self.items)
+
+cart = Cart()
+cart.add_product(Product("Laptop", 50000))
+cart.add_product(Product("Mouse", 500))
+print("Total:", cart.total())
